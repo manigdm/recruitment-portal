@@ -1,0 +1,60 @@
+<section class="container">
+   <div class="main-container">
+   		<div class="col-md-12 form-input">
+   			<form name="searchForm" #searchForm="ngForm" novalidate autocomplete="off">
+   				<div class="row">
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Skills</label>
+		   					<input class="form-control" auto-complete
+							   [(ngModel)]="userForm.skill" [source]="skilGroup"
+							   placeholder ="angulajs, nodejs, etc" [ngModelOptions]="{standalone: true}" required />
+		   					<div>
+		   						<span class="text-danger" *ngIf="!userForm.skill && searchForm.submitted">
+	                        	Please enter the skill*
+	                    		</span>
+		   					</div>
+		   					
+		   				</div>
+		   			</div>
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Preferred Sourse</label>
+		   					<input class="form-control" auto-complete
+							    [(ngModel)]="userForm.sourse"
+							    [source]="preferredSourseGroup"
+							   placeholder ="linkedin, twiter, etc" [ngModelOptions]="{standalone: true}" />
+		   					<div>
+			   					<span class="text-danger" *ngIf="!userForm.sourse && searchForm.submitted">
+		                        	Please enter the preferred sourse*
+		                    	</span>
+	                    	</div>
+		   				</div>
+		   			</div>
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Preferred City</label>
+		   					<input class="form-control" auto-complete
+							    [(ngModel)]="userForm.city"
+							    [source]="cityGroup"
+							   placeholder ="bangalore, chennai, etc" [ngModelOptions]="{standalone: true}" required />
+		   					<div>
+			   					<span class="text-danger" *ngIf="!userForm.city && searchForm.submitted">
+		                        	Please enter the preferred city*
+		                    	</span>
+	                    	</div>
+		   				</div>
+		   			</div>
+	   			</div>
+	   			<div class="col-md-2 pull-right no-padding">
+	   				<button type="submit" class="btn btn-outline-primary ptr btn-green col-lg-10 pull-right" (click)="clearFilter();">Clear</button>
+	   			</div>
+	   			<div class="col-md-2 pull-right no-padding">
+	   				<button type="submit" class="btn btn-outline-primary ptr btn-green col-lg-10 pull-right" (click)="searchUsers();">Submit</button>
+	   			</div>
+	   			
+   			</form>
+   		</div>
+	</div>
+</section>
+

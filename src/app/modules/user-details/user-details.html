@@ -1,0 +1,85 @@
+<section class="container">
+   <div class="main-container">
+   		<div class="col-md-12 form-input">
+   			<form class="clearfix" name="searchForm" #searchForm="ngForm" novalidate autocomplete="off">
+   				<div class="row">
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Skills</label>
+		   					<input class="form-control" auto-complete
+							   [(ngModel)]="userForm.skill" [source]="skilGroup"
+							   placeholder ="angulajs, nodejs, etc" [ngModelOptions]="{standalone: true}" required />
+		   					<div>
+		   						<span class="text-danger" *ngIf="!userForm.skill && searchForm.submitted">
+	                        	Please enter the skill*
+	                    		</span>
+		   					</div>
+		   					
+		   				</div>
+		   			</div>
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Preferred Sourse</label>
+		   					<input class="form-control" auto-complete
+							    [(ngModel)]="userForm.sourse"
+							    [source]="preferredSourseGroup"
+							   placeholder ="linkedin, twiter, etc" [ngModelOptions]="{standalone: true}" />
+		   					<div>
+			   					<span class="text-danger" *ngIf="!userForm.sourse && searchForm.submitted">
+		                        	Please enter the preferred sourse*
+		                    	</span>
+	                    	</div>
+		   				</div>
+		   			</div>
+		   			<div class="col-md-4 input-row">
+		   				<div class="form-group">
+		   					<label>Preferred City</label>
+		   					<input class="form-control" auto-complete
+							    [(ngModel)]="userForm.city"
+							    [source]="cityGroup"
+							   placeholder ="bangalore, chennai, etc" [ngModelOptions]="{standalone: true}" required />
+		   					<div>
+			   					<span class="text-danger" *ngIf="!userForm.city && searchForm.submitted">
+		                        	Please enter the preferred city*
+		                    	</span>
+	                    	</div>
+		   				</div>
+		   			</div>
+	   			</div>
+	   			<div class="col-md-2 pull-right no-padding">
+	   				<button type="submit" class="btn btn-outline-primary ptr btn-green col-lg-10 pull-right" (click)="clearFilter();">Clear</button>
+	   			</div>
+	   			<div class="col-md-2 pull-right no-padding">
+	   				<button type="submit" class="btn btn-outline-primary ptr btn-green col-lg-10 pull-right" (click)="searchUsers(searchForm);">Submit</button>
+	   			</div>
+   			</form>
+   		</div>
+		<div class="col-lg-12 col-md-12 user-daskboard-wrapper">
+			<div class="user-info-table bg-white">
+				<table class="table">
+				    <thead>
+				      <tr *ngIf="!userNotFound">
+				      	<th>Id</th>
+				        <th>Name</th>
+				        <th>Skill</th>
+				        <th>Preferred City</th>
+				        <th>Preferred Sourse</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr *ngFor="let userSubDetail of userSubDetails; let i = index">
+				      	<td>{{userSubDetail.id}}</td>
+				      	<td>{{userSubDetail.name}}</td> 
+				      	<td>{{userSubDetail.skill[1].display_name}}</td>
+				      	<td>{{userSubDetail.city[1].display_name}}</td>
+				      	<td>{{userSubDetail.sourse[1].display_name}}</td>
+				      </tr>
+				    </tbody>
+				    <h6 *ngIf="userNotFound" class="text-center"> There are no users list, Please search with some other fillter data</h6>
+				</table>
+				
+			</div>
+		</div>
+	</div>
+</section>
+

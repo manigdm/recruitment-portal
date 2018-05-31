@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+	background-color: #f8f8f8;
+}
+.no-padding{
+	padding: 0px;
+}
+.ptr{
+	cursor: pointer;
+}
+
+.txt-md{
+	font-size: 14px;
+}
+
+.txt-gray{
+	color: #7d7c7c
+}
+
+.bg-white{
+	background: #fff;
+}
+
+.txt-green{
+	color: #18a78d;
+}
+
+.txt-blue{
+	color: #007bff !important;
+}
+
+.pull-right{
+	float: right;
+}
+.pull-left{
+	float: left;
+}
+.text-danger{
+	font-size: 14px;
+}
+.form-input .ng-autocomplete-placeholder{
+	display: none;
+}
+.form-input input{
+	width: 100%;
+	height: 40px;
+    padding-left: 15px;
+    outline: none;
+    font-size: 14px;
+}
+.form-control:focus {
+	outline: none;
+	border-color: #ced4da;
+	box-shadow: none;
+}
+
+.form-input .dropdown-item.active, .form-input .dropdown-item:active {
+	color: #fff;
+    text-decoration: none;
+    background-color: #18a78d;
+}
+
+.form-input .ng-autocomplete-dropdown .ng-dropdown.open{
+	border: 1px solid #ddd;
+    background: #fff;
+    margin-top: 2px;
+}
+
+.btn-green{
+	color: #18a78d;
+    border-color: #18a78d;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+}
+.btn-green:hover, .btn-green:focus{
+	background: #18a78d;
+    border-color: #18a78d;
+    border-radius: 0;
+    color: #fff;
+}
+.txt-red{
+    color: #ef0c0c;
+}
+.txt-light-green{
+    color: #0cc10c;
+}
+.pull-right{
+    float: right;
+}
+.form-group > div{
+	width: 100%;
+}
+.user-info-table h6{
+	margin-top: 10px;
+}
+ng2-input-autocomplete {
+	width: 340px !important;
+}
